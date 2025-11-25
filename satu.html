@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permintaan Maaf Tulus</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fce4ec; /* Pink sangat muda */
+            margin: 0;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 90%;
+            width: 400px;
+        }
+
+        h1 {
+            color: #d81b60; /* Merah muda tua */
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #333;
+            font-size: 1.1em;
+            line-height: 1.5;
+            margin-bottom: 30px;
+        }
+
+        button {
+            background-color: #ff6e40; /* Orange-Red */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 1em;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #ff3d00;
+            transform: translateY(-2px);
+        }
+
+        /* Gaya untuk pesan setelah diklik */
+        #response-message {
+            font-size: 2em;
+            color: #d81b60;
+            margin-top: 20px;
+            opacity: 0; /* Mulai dengan tersembunyi */
+            transition: opacity 1.5s ease;
+        }
+
+        /* Animasi hati (menggunakan CSS untuk efek) */
+        .heart {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="title">Maafkan Aku, Sayang ❤️</h1>
+        <p id="message">
+            Aku tahu aku telah melakukan kesalahan. Tidak ada kata yang bisa menggambarkan penyesalanku. 
+            Aku janji akan berusaha lebih baik lagi. Kamu adalah yang terbaik, dan aku tidak mau kehilanganmu.
+            <br><br>
+            Maukah kamu memberiku kesempatan lagi?
+        </p>
+
+        <button onclick="acceptApology()">Maafkan Aku</button>
+        
+        <div id="response-message"></div>
+    </div>
+
+    <script>
+        function acceptApology() {
+            // 1. Dapatkan elemen yang akan diubah
+            const responseDiv = document.getElementById('response-message');
+            const button = document.querySelector('button');
+            const title = document.getElementById('title');
+            const message = document.getElementById('message');
+
+            // 2. Tampilkan pesan manis dan animasi hati
+            responseDiv.innerHTML = '<span class="heart">💌 Terima Kasih! 💖</span>';
+            responseDiv.style.opacity = 1; // Jadikan terlihat
+
+            // 3. Ubah tampilan utama
+            title.innerHTML = 'Aku Sayang Kamu! 🥰';
+            message.innerHTML = 'Aku sangat lega. Mari kita lupakan yang lalu dan buat hari ini spesial!';
+            button.style.display = 'none'; // Sembunyikan tombol
+        }
+    </script>
+
+</body>
+</html>
