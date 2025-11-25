@@ -17,6 +17,8 @@
         align-items: center;
         min-height: 100vh;
         padding: 20px;
+        position: relative;
+        overflow: hidden;
     }
 
     .card {
@@ -86,11 +88,24 @@
         border-radius: 12px;
         cursor: pointer;
         transition: 0.25s;
+        min-width: 120px;
     }
 
     .btn:hover {
         background: #ff589f;
         transform: scale(1.05);
+    }
+
+    /* Tombol Tidak kabur */
+    .no {
+        background: #ffd1e8;
+        color: #c75286;
+        position: absolute;
+        border-radius: 12px;
+        padding: 10px 18px;
+        border: none;
+        cursor: pointer;
+        transition: 0.2s;
     }
 
     #response {
@@ -126,19 +141,32 @@
             Aku pengen kita tetap jadi tim solid halal goals 🤍
         </p>
 
-        <button class="btn" onclick="accept()">Iya, aku maafin 😊</button>
+        <button class="btn yes" onclick="accept()">Iya, aku maafin 😊</button>
+        <button class="no" id="noBtn">Tidak 😠</button>
     </div>
 
     <div id="response">Alhamdulillah 😭💗 Makasih yaa, kamu baik banget...</div>
 </div>
 
 <script>
-    function accept() {
-        // Hilangkan semua teks permintaan maaf
-        document.getElementById("text-area").style.display = "none";
+    // Tombol Tidak kabur
+    const noBtn = document.getElementById("noBtn");
 
-        // Tampilkan pesan balasan cute
-        document.getElementById("response").style.display = "block";
+    noBtn.addEventListener("mouseover", () => {
+        const x = Math.random() * (window.innerWidth - 150);
+        const y = Math.random() * (window.innerHeight - 150);
+
+        noBtn.style.left = `${x}px`;
+        noBtn.style.top = `${y}px`;
+    });
+
+    // Tombol IYA redirect ke WhatsApp
+    function accept() {
+        const waNumber = "085217553747";
+        const message = "ya udahh aku maafin sayangku cintaku myworld my baby";
+
+        const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
+        window.location.href = url;
     }
 </script>
 
