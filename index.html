@@ -1,117 +1,146 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Permintaan Maaf Tulus</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: #fce4ec; /* Pink sangat muda */
-            margin: 0;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maaf yaa 🥺💗</title>
 
-        .container {
-            background-color: #ffffff;
-            padding: 30px 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            max-width: 90%;
-            width: 400px;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-        h1 {
-            color: #d81b60; /* Merah muda tua */
-            margin-bottom: 20px;
-        }
+<style>
+    body {
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(135deg, #ffe4ec, #fff7fc);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
 
-        p {
-            color: #333;
-            font-size: 1.1em;
-            line-height: 1.5;
-            margin-bottom: 30px;
-        }
+    .card {
+        background: #ffffff;
+        width: 90%;
+        max-width: 380px;
+        padding: 25px;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        text-align: center;
+        position: relative;
+        animation: popUp 0.8s ease;
+    }
 
-        button {
-            background-color: #ff6e40; /* Orange-Red */
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 1em;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 8px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
+    @keyframes popUp {
+        from { transform: scale(0.7); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
 
-        button:hover {
-            background-color: #ff3d00;
-            transform: translateY(-2px);
-        }
+    /* Floating cute emojis */
+    .emoji {
+        position: absolute;
+        font-size: 2.2em;
+        opacity: 0.3;
+        animation: floaty 4s ease-in-out infinite;
+    }
 
-        /* Gaya untuk pesan setelah diklik */
-        #response-message {
-            font-size: 2em;
-            color: #d81b60;
-            margin-top: 20px;
-            opacity: 0; /* Mulai dengan tersembunyi */
-            transition: opacity 1.5s ease;
-        }
+    @keyframes floaty {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+    }
 
-        /* Animasi hati (menggunakan CSS untuk efek) */
-        .heart {
-            animation: pulse 1.5s infinite;
-        }
+    .emoji.e1 { top: -10px; left: -10px; animation-delay: 0s; }
+    .emoji.e2 { bottom: -10px; right: -10px; animation-delay: 1s; }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-    </style>
+    .salam {
+        background: #ffeaf4;
+        color: #cf4f87;
+        padding: 5px 12px;
+        border-radius: 10px;
+        font-size: 0.9em;
+        display: inline-block;
+        margin-bottom: 12px;
+        font-weight: 500;
+    }
+
+    h1 {
+        font-size: 1.6em;
+        font-weight: 600;
+        color: #e5529e;
+        margin-bottom: 5px;
+    }
+
+    p {
+        color: #444;
+        font-size: 0.95em;
+        line-height: 1.5;
+        margin-bottom: 18px;
+    }
+
+    .btn {
+        background: #ff76b6;
+        color: white;
+        padding: 10px 18px;
+        border: none;
+        font-size: 1em;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: 0.25s;
+    }
+
+    .btn:hover {
+        background: #ff589f;
+        transform: scale(1.05);
+    }
+
+    #response {
+        margin-top: 15px;
+        display: none;
+        font-size: 1.2em;
+        color: #d84f92;
+        font-weight: 600;
+        animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-        <h1 id="title">Maafkan Aku, Sayang ❤️</h1>
-        <p id="message">
-            Aku tahu aku telah melakukan kesalahan. Tidak ada kata yang bisa menggambarkan penyesalanku. 
-            Aku janji akan berusaha lebih baik lagi. Kamu adalah yang terbaik, dan aku tidak mau kehilanganmu.
-            <br><br>
-            Maukah kamu memberiku kesempatan lagi?
+<div class="card">
+    <div class="emoji e1">🌸</div>
+    <div class="emoji e2">✨</div>
+
+    <div class="salam">Assalamu'alaikum ✨</div>
+
+    <div id="text-area">
+        <h1>Maafin aku yaa 🥺💗</h1>
+
+        <p>
+            Aku sadar aku salah, dan aku bener-bener nyesel banget.  
+            Semoga hati kamu dilembutin Allah buat maafin aku 🫶  
+            Aku pengen kita tetap jadi tim solid halal goals 🤍
         </p>
 
-        <button onclick="acceptApology()">Maafkan Aku</button>
-        
-        <div id="response-message"></div>
+        <button class="btn" onclick="accept()">Iya, aku maafin 😊</button>
     </div>
 
-    <script>
-        function acceptApology() {
-            // 1. Dapatkan elemen yang akan diubah
-            const responseDiv = document.getElementById('response-message');
-            const button = document.querySelector('button');
-            const title = document.getElementById('title');
-            const message = document.getElementById('message');
+    <div id="response">Alhamdulillah 😭💗 Makasih yaa, kamu baik banget...</div>
+</div>
 
-            // 2. Tampilkan pesan manis dan animasi hati
-            responseDiv.innerHTML = '<span class="heart">💌 Terima Kasih! 💖</span>';
-            responseDiv.style.opacity = 1; // Jadikan terlihat
+<script>
+    function accept() {
+        // Hilangkan semua teks permintaan maaf
+        document.getElementById("text-area").style.display = "none";
 
-            // 3. Ubah tampilan utama
-            title.innerHTML = 'Aku Sayang Kamu! 🥰';
-            message.innerHTML = 'Aku sangat lega. Mari kita lupakan yang lalu dan buat hari ini spesial!';
-            button.style.display = 'none'; // Sembunyikan tombol
-        }
-    </script>
+        // Tampilkan pesan balasan cute
+        document.getElementById("response").style.display = "block";
+    }
+</script>
 
 </body>
 </html>
